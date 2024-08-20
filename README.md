@@ -10,6 +10,7 @@ Repositorio Aquitectura de Computadoras 5BS
 
 ### Examen [?]%
 
+
 ### Participación [?]%
 
 ### Asistencia [?]%
@@ -22,7 +23,6 @@ Repositorio Aquitectura de Computadoras 5BS
 
 #### Código de la Práctica 1
 
-```assembly
 ; Código de la práctica 1
 ```
 
