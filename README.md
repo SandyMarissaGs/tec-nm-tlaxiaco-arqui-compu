@@ -14,6 +14,7 @@ fix (fix:arreglar) -: actualizacion
 
 ### Examen 25%
 
+### Examen 25%
 
 ### Asistencia 20%
 
