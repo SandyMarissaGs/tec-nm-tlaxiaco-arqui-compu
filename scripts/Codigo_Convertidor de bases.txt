@@ -1,0 +1,84 @@
+import java.util.Scanner;  // Importa la clase Scanner para leer la entrada del usuario
+
+public class BaseConverter {  // Define la clase BaseConverter
+
+    public static void main(String[] args) {  // Método principal donde se ejecuta el programa
+        Scanner scanner = new Scanner(System.in);  // Crea un objeto Scanner para leer la entrada del usuario
+
+        while (true) {  // Bucle infinito que se repetirá hasta que el usuario elija salir
+            // Muestra el menú de opciones al usuario
+            System.out.println("=== Conversor de Bases ===");
+            System.out.println("1. Decimal a Binario");
+            System.out.println("2. Decimal a Octal");
+            System.out.println("3. Decimal a Hexadecimal");
+            System.out.println("4. Binario a Decimal");
+            System.out.println("5. Octal a Decimal");
+            System.out.println("6. Hexadecimal a Decimal");
+            System.out.println("7. Salir");
+            System.out.print("Selecciona una opción: ");
+            
+            int opcion = scanner.nextInt();  // Lee la opción seleccionada por el usuario
+
+            if (opcion == 7) {  // Si la opción es 7, el usuario quiere salir
+                System.out.println("Saliendo...");  // Muestra un mensaje de despedida
+                break;  // Sale del bucle infinito y termina el programa
+            }
+
+            System.out.print("Ingresa el número a convertir: ");  // Pide al usuario que ingrese el número a convertir
+            String numero = scanner.next();  // Lee el número ingresado por el usuario como una cadena de texto
+
+            // Procesa la opción seleccionada y realiza la conversión correspondiente
+            switch (opcion) {
+                case 1:  // Si la opción es 1 (Decimal a Binario)
+                    System.out.println("Resultado: " + decimalABinario(Integer.parseInt(numero)));  // Convierte el número decimal a binario y muestra el resultado
+                    break;
+                case 2:  // Si la opción es 2 (Decimal a Octal)
+                    System.out.println("Resultado: " + decimalAOctal(Integer.parseInt(numero)));  // Convierte el número decimal a octal y muestra el resultado
+                    break;
+                case 3:  // Si la opción es 3 (Decimal a Hexadecimal)
+                    System.out.println("Resultado: " + decimalAHexadecimal(Integer.parseInt(numero)));  // Convierte el número decimal a hexadecimal y muestra el resultado
+                    break;
+                case 4:  // Si la opción es 4 (Binario a Decimal)
+                    System.out.println("Resultado: " + binarioADecimal(numero));  // Convierte el número binario a decimal y muestra el resultado
+                    break;
+                case 5:  // Si la opción es 5 (Octal a Decimal)
+                    System.out.println("Resultado: " + octalADecimal(numero));  // Convierte el número octal a decimal y muestra el resultado
+                    break;
+                case 6:  // Si la opción es 6 (Hexadecimal a Decimal)
+                    System.out.println("Resultado: " + hexadecimalADecimal(numero));  // Convierte el número hexadecimal a decimal y muestra el resultado
+                    break;
+                default:  // Si la opción no es válida
+                    System.out.println("Opción inválida. Intenta de nuevo.");  // Muestra un mensaje de error
+                    break;
+            }
+        }
+
+        scanner.close();  // Cierra el objeto Scanner
+    }
+
+    // Métodos de conversión
+
+    public static String decimalABinario(int numero) {  // Convierte un número decimal a binario
+        return Integer.toBinaryString(numero);  // Usa el método toBinaryString de la clase Integer para la conversión
+    }
+
+    public static String decimalAOctal(int numero) {  // Convierte un número decimal a octal
+        return Integer.toOctalString(numero);  // Usa el método toOctalString de la clase Integer para la conversión
+    }
+
+    public static String decimalAHexadecimal(int numero) {  // Convierte un número decimal a hexadecimal
+        return Integer.toHexString(numero).toUpperCase();  // Usa el método toHexString de la clase Integer para la conversión y convierte a mayúsculas
+    }
+
+    public static int binarioADecimal(String numero) {  // Convierte un número binario (como cadena) a decimal
+        return Integer.parseInt(numero, 2);  // Usa el método parseInt de la clase Integer con base 2 para la conversión
+    }
+
+    public static int octalADecimal(String numero) {  // Convierte un número octal (como cadena) a decimal
+        return Integer.parseInt(numero, 8);  // Usa el método parseInt de la clase Integer con base 8 para la conversión
+    }
+
+    public static int hexadecimalADecimal(String numero) {  // Convierte un número hexadecimal (como cadena) a decimal
+        return Integer.parseInt(numero, 16);  // Usa el método parseInt de la clase Integer con base 16 para la conversión
+    }
+}
